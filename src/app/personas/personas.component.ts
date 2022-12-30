@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-personas',
   templateUrl: './personas.component.html',
   styleUrls: ['./personas.component.css']
 })
-export class PersonasComponent {
-
+export class PersonasComponent implements OnInit {
+  nombre: string;
+  apellidos: string;
+  edad: number
 }

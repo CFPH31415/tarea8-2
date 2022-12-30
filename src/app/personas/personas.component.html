@@ -1,4 +1,17 @@
-<table>
+<form (ngSubmit)="agregarPersona()">
+    <label>Nombre:</label>
+    <input type="text" [(ngModel)]="nombre" name="nombre" required>
+    <br>
+    <label>Apellidos:</label>
+    <input type="text" [(ngModel)]="apellidos" name="apellidos" required>
+    <br>
+    <label>Edad:</label>
+    <input type="number" [(ngModel)]="edad" name="edad" required>
+    <br>
+    <button type="submit">Agregar persona</button>
+  </form>
+  
+  <table>
     <tr>
       <th>Nombre</th>
       <th>Apellidos</th>
@@ -6,10 +19,10 @@
       <th>Mayor de edad</th>
     </tr>
     <tr *ngFor="let persona of personas">
-      <td>{{persona.nombre}}</td>
-      <td>{{persona.apellidos}}</td>
-      <td>{{persona.edad}}</td>
-      <td *ngIf="persona.edad >= 18; else menorDeEdad">Sí</td>
-      <ng-template #menorDeEdad>No</ng-template>
+      <td>{{ persona.nombre }}</td>
+      <td>{{ persona.apellidos }}</td>
+      <td>{{ persona.edad }}</td>
+      <td *ngIf="persona.edad >= 18">Sí</td>
+      <td *ngIf="persona.edad < 18">No</td>
     </tr>
   </table>
