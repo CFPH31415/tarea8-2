@@ -1,0 +1,15 @@
+<table>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Edad</th>
+      <th>Mayor de edad</th>
+    </tr>
+    <tr *ngFor="let persona of personas">
+      <td>{{persona.nombre}}</td>
+      <td>{{persona.apellidos}}</td>
+      <td>{{persona.edad}}</td>
+      <td *ngIf="persona.edad >= 18; else menorDeEdad">Sí</td>
+      <ng-template #menorDeEdad>No</ng-template>
+    </tr>
+  </table>
